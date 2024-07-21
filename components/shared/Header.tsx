@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -13,7 +14,14 @@ const Header = () => {
 						height={38}
 					/>
 				</Link>
-				<div className="flex w-32 justify-end gap-3">User</div>
+				<div className="flex w-32 justify-end gap-3">
+					<SignedOut>
+						<SignInButton />
+					</SignedOut>
+					<SignedIn>
+						<UserButton />
+					</SignedIn>
+				</div>
 			</div>
 		</header>
 	)
