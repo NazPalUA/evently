@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const sanitizeUsername = (username: string) => {
+export const sanitizeUsername = (username: string) => {
   // Transliterate non-ASCII characters to ASCII
   let sanitized = transliterate(username)
     .replace(/[^a-zA-Z0-9._]/g, "") // Remove invalid characters
@@ -25,8 +25,6 @@ const sanitizeUsername = (username: string) => {
 
   return sanitized;
 };
-
-export default sanitizeUsername;
 
 export const formatDateTime = (dateString: Date) => {
   const dateTimeOptions: Intl.DateTimeFormatOptions = {
