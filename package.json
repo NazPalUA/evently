@@ -26,6 +26,7 @@
     "svix": "^1.25.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
+    "transliteration": "^2.3.5",
     "uploadthing": "^6.13.2"
   },
   "devDependencies": {
