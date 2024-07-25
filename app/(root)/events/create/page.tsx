@@ -2,8 +2,8 @@ import EventForm from "@/components/shared/EventForm";
 import { auth } from "@clerk/nextjs/server";
 
 const CreateEvent = () => {
-  // Get the userId from auth() -- if null, the user is not signed in
-  const { userId } = auth();
+  const { sessionClaims } = auth();
+  const userId = sessionClaims?.userId as string;
 
   return (
     <>
