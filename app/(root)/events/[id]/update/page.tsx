@@ -10,7 +10,8 @@ type UpdateEventProps = {
 
 const UpdateEvent = async ({ params: { id } }: UpdateEventProps) => {
   // Get the userId from auth() -- if null, the user is not signed in
-  const { userId } = auth();
+  const { sessionClaims } = auth();
+  const userId = sessionClaims?.userId as string;
   const event = await getEventById(id);
 
   return (
